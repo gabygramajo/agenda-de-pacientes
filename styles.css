@@ -1,3 +1,39 @@
+
 body {
-  background-color: gray;
+  background-color: #DADDFC;
+  margin: 0;
+}
+h1, h2 {
+  text-align: center;
+  margin-top: 0;
+}
+/** generales **/
+.contenedor {
+  width: min(90%, 1200px);
+  margin: 0 auto;
+}
+/** Header **/
+.header {
+  background-color: #396EB0;
+  color: #fff;
+  height: 100px;
+  margin-bottom: 40px;
+}
+
+/** Seccion Principal **/
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 20px;
+}
+
+/** Formulario **/
+.formulario__input {
+  display: block;
+}
+
+/** Pacientes **/
+.misPacientes__lista {
+  border: 5px solid gray;
+  height: 100%;
 }
