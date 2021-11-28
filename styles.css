@@ -1,39 +1,204 @@
-
-body {
-  background-color: #DADDFC;
-  margin: 0;
+:root{
+  --violeta: #6E3CBC;
+  --lila: #7267CB;
+  --azul-claro: #98BAE7;
+  --celeste: #B8E4F0;
+  --negro: #000;
+  --blanco: #fff;
 }
-h1, h2 {
-  text-align: center;
-  margin-top: 0;
+
+html{
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*,*:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  background-color: var(--lila);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
 }
 /** generales **/
-.contenedor {
-  width: min(90%, 1200px);
+h1, h2 {
+  text-align: center;
+  text-transform: capitalize;
+  margin: 0;
+  width: 100%;
+}
+h1 {
+  font-size: 3.5rem;
+}
+h2 {
+  font-size: 3rem;
+  color: var(--blanco);
+  padding: .5rem 0;
+  background-color: var(--violeta);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.container {
+  width: 95%;
   margin: 0 auto;
+  padding: .5rem;
+  border-radius: 1rem;
+  background-color: var(--celeste);
+  overflow-x: scroll;
+}
+@media (min-width: 768px) {
+  .container {
+    width: min(90%, 1200px);
+  }
+  .grid{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+  }
 }
 /** Header **/
 .header {
-  background-color: #396EB0;
+  background-color: var(--violeta);
   color: #fff;
   height: 100px;
-  margin-bottom: 40px;
+  margin-bottom: 1rem;
+  padding: .5rem;
+  display: flex;
+  align-items: center;
 }
 
 /** Seccion Principal **/
-.grid{
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  column-gap: 20px;
+.seccionPrincipal__titulo {
+  font-size: 2.4rem;
 }
 
 /** Formulario **/
+.formulario {
+  width: 100%;
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid var(--blanco);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: var(--violeta);
+  color: var(--blanco);
+}
+
 .formulario__input {
   display: block;
+  width: 90%;
+  padding: .3rem;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  border: 1px solid var(--azul-claro);
+  border-radius: .5rem;
+  background-color: var(--lila);
+  color: var(--blanco);
+}
+.formulario__input:focus,
+#btn-agregar:active {
+  outline: 2px solid var(--celeste);
+  border: 1px solid var(--lila);
+}
+
+.formulario__input.email{
+  text-transform: lowercase;
+}
+.formulario__label{
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+#btn-agregar {
+  margin: .5rem 0;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-transform: capitalize;
+  font-size: 2rem;
+  background-color: var(--lila);
+  border: 1px solid var(--azul-claro);
+  color: var(--blanco);
+  font-weight: 700;
+  cursor: pointer;
 }
 
 /** Pacientes **/
+.misPacientes{
+  margin-top: 1rem;
+}
 .misPacientes__lista {
-  border: 5px solid gray;
-  height: 100%;
+  overflow-x: scroll;
+}
+@media (min-width: 768px) {
+  .misPacientes__lista {
+    overflow-x: hidden;
+  }
+  .misPacientes{
+    margin-top: 0;
+  }
+}
+
+/** Tabla **/
+
+.table{
+  border-collapse: collapse;
+}
+
+.table__thead {
+  background-color: var(--violeta);
+  color: var(--blanco);
+
+  display: none;
+  /** 1 - oculta los headers **/
+}
+
+.table__th{
+  border: 1px solid var(--blanco);
+}
+.table__td{
+  border: 1px solid var(--blanco);
+  background-color: var(--lila);
+  color: var(--blanco);
+}
+
+.table,
+.table__body,
+.table__row, 
+.table__td{
+  display: block;
+  width: 100%;
+  /** 2 - convierte en bloque, menos el thead y th xq estan en display none **/
+}
+
+.table__row{
+  margin-bottom: 1.5rem;
+  /** Separar la filas **/
+}
+
+.table__td {
+  padding-left: 50%;
+  padding-right: 1.5rem;
+  text-align: right;
+  position: relative;
+}
+.table__td:before {
+  content: attr(data-label);
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 93%;
+  padding-left: 1.5rem;
+  /* font-size: 1.5rem; */
+  font-weight: bold;
+  text-align: left;
+  background-color: var(--violeta);
+  /** Trae los valores del atributo data-label **/
+}
+@media (min-width: 768px) {
+  .table__td:before {
+    text-align: center;
+  }
 }

@@ -5,6 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agenda de Pacientes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,67 +15,105 @@
     <h1 class="header__titulo">Agenda de Pacientes</h1>
   </header>
 
-  <!-- <div class="grid contenedor">
+  <div class="grid container">
 
     <section class="seccionPrincipal">
       <h2 class="seccionPrincipal__titulo">Agregar nuevo paciente</h2>
     
       <div class="formulario">
-        <div class="datosPersonales">
-          
-          <label for="nombre">Nombre: </label>
-          <input type="text" class="formulario__input">
+        
+          <label class="formulario__label" for="nombre">Nombre: </label>
+          <input required type="text" class="formulario__input">
 
-          <label for="apellido">Apellido: </label>
-          <input type="text" class="formulario__input">
+          <label class="formulario__label" for="apellido">Apellido: </label>
+          <input required type="text" class="formulario__input">
 
-          <label for="sexo">Sexo: </label>
-          <select name="sexo" id="sexo" class="formulario__input">
+          <label class="formulario__label" for="sexo">Sexo: </label>
+          <select name="sexo" id="sexo" class="formulario__input select" required>
             <option value="masculino" selected disabled>Seleccionar Sexo</option>
             <option value="femenino">Femenino</option>
             <option value="masculino">Masculino</option>
           </select>
 
-          <label for="dni">DNI: </label>
-          <input type="text" class="formulario__input">
+          <label class="formulario__label" for="dni">DNI: </label>
+          <input required type="text" class="formulario__input">
 
-          <label for="nacimiento">Fecha de nacimiento: </label>
-          <input type="text" class="formulario__input">
+          <label class="formulario__label" for="nacimiento">Nacimiento: </label>
+          <input required type="date" class="formulario__input">
           
-          <label for="nacionalidad">Nacionalidad: </label>
-          <input type="text" class="formulario__input">
+          <label class="formulario__label" for="nacionalidad">Nacionalidad: </label>
+          <input required type="text" class="formulario__input">
           
-          <label for="ocupacion">Ocupación: </label>
-          <input type="text" class="formulario__input">
+          <label class="formulario__label" for="ocupacion">Ocupación: </label>
+          <input required type="text" class="formulario__input">
 
-        </div>
-
-        <div class="datosDeContacto">
-
-          <label for="residencia">Residencia Actual: </label>
-          <input type="text" class="formulario__input">
+          <label class="formulario__label" for="residencia">Ciudad Actual: </label>
+          <input required type="text" class="formulario__input">
           
-          <label for="direccion">Dirección actual: </label>
-          <input type="text" class="formulario__input">
+          <label class="formulario__label" for="direccion">Dirección actual: </label>
+          <input required type="text" class="formulario__input">
           
-          <label for="telefono">telefono: </label>
-          <input type="tel" class="formulario__input">
+          <label class="formulario__label" for="telefono">telefono: </label>
+          <input required type="number" min="1" max="12" class="formulario__input">
           
-          <label for="email">Email: </label>
-          <input type="email" class="formulario__input">    
-        </div>
+          <label class="formulario__label email" for="email">Email: </label>
+          <input required type="email" class="formulario__input">    
+        
 
         <button id="btn-agregar">Agregar Paciente</button>
-      </div>
+      </div> <!-- formulario -->
 
-    </section> section principal -->
+    </section> 
+    <!-- section principal -->
 
-    <!-- <section class="misPacientes">
+    <section class="misPacientes">
       <h2 class="misPacientes__titulo">Mis Pacientes</h2>
-      <div class="misPacientes__lista"></div>
+
+      <div class="misPacientes__lista">
+    
+          <table class="table">
+            <thead class="table__thead">
+              
+              <tr  class="table__row">
+                <th class="table__th">Id</th>
+                <th class="table__th">Nombre</th>
+                <th class="table__th">Sexo</th>
+                <th class="table__th">DNI</th>
+                <th class="table__th">Nacimiento</th>
+                <th class="table__th">Nacionalidad</th>
+                <th class="table__th">Ocupación</th>
+                <th class="table__th">Ciudad</th>
+                <th class="table__th">Direccion</th>
+                <th class="table__th">Telefono</th>
+                <th class="table__th">Email</th>
+              </tr>
+
+            </thead>
+
+            <tbody class="table__body">
+             
+              <tr  class="table__row">
+                <td class="table__td" data-label="Id">0</td>
+                <td class="table__td" data-label="Nombre">Lucas Gómez</td>
+                <td class="table__td" data-label="Sexo">Masculino</td>
+                <td class="table__td" data-label="DNI">34233543</td>
+                <td class="table__td" data-label="Nacimiento">12/02/1980</td>
+                <td class="table__td" data-label="Nacionalidad">Argentina</td>
+                <td class="table__td" data-label="Profesión">Carpintero</td>
+                <td class="table__td" data-label="Ciudad">Morón</td>
+                <td class="table__td" data-label="Dirección">Rivadavia 1212</td>
+                <td class="table__td" data-label="Teléfono">1122443355</td>
+                <td class="table__td" data-label="Email">lucas@gmail.com</td>
+              </tr>
+              
+            </tbody>
+
+          </table>
+        
+      </div>
     </section>
 
-  </div>  -->
+  </div> 
   <!-- grid -->
 
   <!-- scripts -->

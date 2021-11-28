@@ -66,7 +66,7 @@ function agregarPaciente(){
 
 
 
-BBDD_Pacientes.push( new Paciente("Lucas Gomez", "masculino", "34233543", "12/02/1980", "Argentina", "Carpintero", "Morón", "Rivadavi 1212","1112211212", "lucas@gmail.com") );
+BBDD_Pacientes.push( new Paciente("Lucas Gomez", "masculino", "34233543", "12/02/1980", "Argentina", "Carpintero", "Morón", "Rivadavia 1212","1112121212", "lucas@gmail.com") );
 BBDD_Pacientes.push( new Paciente("Adriana lopez", "femenino", "55232240", "22/10/1985", "Uruguay", "Comerciante", "Liniers", "Alvear 3322","1112211212", "adriana@gmail.com") );
 BBDD_Pacientes.push( new Paciente("Gonzalo Rojas", "masculino", "55232243", "22/10/1985", "Argentina", "Periodista", "Liniers", "Alvear 3322","1112211212", "gonza@gmail.com") );
 BBDD_Pacientes.push( new Paciente("Luisa Mammani", "femenino", "55232240", "22/10/1985", "Uruguay", "Modelo", "Liniers", "Alvear 3322","1112211212", "Luisa@gmail.com") );
