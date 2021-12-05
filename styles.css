@@ -86,6 +86,9 @@ h2 {
   background-color: var(--violeta);
   color: var(--blanco);
 }
+.formulario__label {
+  padding: .5rem 0;
+}
 
 .formulario__input {
   display: block;
