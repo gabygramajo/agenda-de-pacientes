@@ -69,7 +69,7 @@ h2 {
 }
 
 /** Seccion Principal **/
-.seccionPrincipal__titulo {
+.seccion-principal__titulo {
   font-size: 2.4rem;
 }
 
@@ -126,17 +126,17 @@ h2 {
 }
 
 /** Pacientes **/
-.misPacientes{
+.mis-pacientes{
   margin-top: 1rem;
 }
-.misPacientes__lista {
+.mis-pacientes__lista {
   overflow-x: scroll;
 }
 @media (min-width: 768px) {
-  .misPacientes__lista {
+  .mis-pacientes__lista {
     overflow-x: hidden;
   }
-  .misPacientes{
+  .mis-pacientes{
     margin-top: 0;
   }
 }
