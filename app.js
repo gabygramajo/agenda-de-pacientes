@@ -46,23 +46,23 @@ function Paciente(
 } // Paciente
 
 
-function agregarPaciente(){
-  BBDD_Pacientes.push( 
-    new Paciente( 
-      PCTNombre = prompt("Nombre Completo: "),   
-      PCTSexo = prompt("Sexo: "), 
-      PCTdni = prompt("DNI: "), 
-      PCTnacimiento = prompt("Fecha de Nacimiento: "),  
-      PCTnacionalidad = prompt("Nacionalidad: "), 
-      PCTocupacion = prompt("Ocupación: "),
-      PCTresidenciaActual = prompt("Ciudad Actual: "),
-      PCTdireccion = prompt("Dirección: "),
-      PCTTelefono = prompt("Teléfono: "), 
-      PCTemail = prompt("Email: "),
-      ) 
-    );
-    console.log("Agregado con exito!", BBDD_Pacientes);
-} // agregarPaciente
+// function agregarPaciente(){
+//   BBDD_Pacientes.push( 
+//     new Paciente( 
+//       PCTNombre = prompt("Nombre Completo: "),   
+//       PCTSexo = prompt("Sexo: "), 
+//       PCTdni = prompt("DNI: "), 
+//       PCTnacimiento = prompt("Fecha de Nacimiento: "),  
+//       PCTnacionalidad = prompt("Nacionalidad: "), 
+//       PCTocupacion = prompt("Ocupación: "),
+//       PCTresidenciaActual = prompt("Ciudad Actual: "),
+//       PCTdireccion = prompt("Dirección: "),
+//       PCTTelefono = prompt("Teléfono: "), 
+//       PCTemail = prompt("Email: "),
+//       ) 
+//     );
+//     console.log("Agregado con exito!", BBDD_Pacientes);
+// } // agregarPaciente
 
 
 
@@ -116,4 +116,70 @@ function obtenerPacientesPorUltimoDigito(digito){
   }
   else
     console.log("No hay pacientes que teminen en: ", digito);
+}
+
+// Dom Events
+
+// botón de agregar paciente
+const btnAgregar = document.querySelector("#btn-agregar");
+
+
+// inputs
+const inputName = document.querySelector("#name"),
+      inputLastName = document.querySelector("#last-name"),
+      inputGender = document.querySelector("#gender"),
+      inputDNI = document.querySelector("#dni"),
+      inputBirth = document.querySelector("#birth"),
+      inputNationality = document.querySelector("#nationality"),
+      inputOccupation = document.querySelector("#occupation"),
+      inputResidence = document.querySelector("#residence"),
+      inputAddress = document.querySelector("#address"),
+      inputTel = document.querySelector("#tel"),
+      inputEmail = document.querySelector("#email");
+
+// Funciones
+btnAgregar.addEventListener("click", function(){ 
+  BBDD_Pacientes.push( 
+    new Paciente(
+      limpiarInput(`${inputName.value} ${inputLastName.value}`),
+      limpiarInput(inputGender.value),
+      limpiarInput(inputDNI.value.slice(0, 8)),
+      limpiarInput(inputBirth.value),
+      limpiarInput(inputNationality.value),
+      limpiarInput(inputOccupation.value),
+      limpiarInput(inputResidence.value),
+      limpiarInput(inputAddress.value),
+      limpiarInput(inputTel.value.slice(0, 8)),
+      limpiarInput(inputEmail.value)
+    ));
+    agregarPaciente()
+})
+
+// Agregar paciente a la tabla
+function agregarPaciente(){
+  const tablaBody = document.querySelector(".table__body");
+
+  tablaBody.innerHTML += `
+  <tr  class="table__row">
+  <td class="table__td" data-label="Id"> ${2}</td>
+  <td class="table__td" data-label="Nombre"> ${limpiarInput(`${inputName.value} ${inputLastName.value}`)}</td>
+  <td class="table__td" data-label="Sexo"> ${limpiarInput(inputGender.value)}</td>
+  <td class="table__td" data-label="DNI"> ${limpiarInput(inputDNI.value.slice(0, 8))}</td>
+  <td class="table__td" data-label="Nacimiento"> ${limpiarInput(inputBirth.value)}</td>
+  <td class="table__td" data-label="Nacionalidad"> ${limpiarInput(inputNationality.value)}</td>
+  <td class="table__td" data-label="Profesión"> ${limpiarInput(inputOccupation.value)}</td>
+  <td class="table__td" data-label="Ciudad"> ${limpiarInput(inputResidence.value)}</td>
+  <td class="table__td" data-label="Dirección"> ${limpiarInput(inputAddress.value)}</td>
+  <td class="table__td" data-label="Teléfono"> ${limpiarInput(inputTel.value.slice(0, 8))}</td>
+  <td class="table__td" data-label="Email"> ${limpiarInput(inputEmail.value)}</td>
+</tr>`
+}
+
+// Limpiar input de espacios
+function limpiarInput(inputText) {
+  let sinEspaciosLaterales = inputText.trimStart().trimEnd();
+  let espaciosIntermedios = sinEspaciosLaterales.split(" ");
+  let filtrarPalabras = espaciosIntermedios.filter( word => word !== "");
+  let inputTextLimpio = filtrarPalabras.join(" ");
+  return inputTextLimpio; 
 }
