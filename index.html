@@ -30,15 +30,15 @@
           <label class="formulario__label" for="last-name">Apellido: </label>
           <input id="last-name" required type="text" class="formulario__input">
 
-          <label class="formulario__label" for="sexo">Sexo: </label>
-          <select id="sexo" name="sexo" class="formulario__input select" required>
+          <label class="formulario__label" for="gender">Sexo: </label>
+          <select id="gender" name="gender" class="formulario__input select" required>
             <option value="masculino" selected disabled>Seleccionar Sexo</option>
             <option value="femenino">Femenino</option>
             <option value="masculino">Masculino</option>
           </select>
 
           <label class="formulario__label" for="dni">DNI: </label>
-          <input id="dni" required type="text" class="formulario__input">
+          <input id="dni" required type="number" class="formulario__input" maxlength="8">
 
           <label class="formulario__label" for="birth">Nacimiento: </label>
           <input id="birth" required type="date" class="formulario__input">
