@@ -107,8 +107,9 @@ h2 {
   border: 1px solid var(--lila);
 }
 
-.formulario__input.email{
+.formulario__input#email{
   text-transform: lowercase;
+
 }
 .formulario__label{
   font-size: 2rem;
@@ -198,7 +199,14 @@ h2 {
   font-weight: bold;
   text-align: left;
   background-color: var(--violeta);
+  color: var(--blanco);
   /** Trae los valores del atributo data-label **/
+}
+[data-label="Nombre"] {
+  font-weight: bold;
+  text-transform: capitalize;
+  background-color: yellow;
+  color: var(--violeta) !important;
 }
 @media (min-width: 768px) {
   .table__td:before {
